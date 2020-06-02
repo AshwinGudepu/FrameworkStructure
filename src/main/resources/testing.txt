@@ -1,0 +1,1 @@
+[Product{name='Television', category='Electronics', grade='A', price=1000}, Product{name='Laptop', category='Electronics', grade='B', price=500}, Product{name='Screwdriver', category='HardWare', grade='A', price=1200}, Product{name='Measuring Tape', category='Hardware', grade='B', price=650}, Product{name='Switch Board', category='Electric', grade='A', price=1300}]

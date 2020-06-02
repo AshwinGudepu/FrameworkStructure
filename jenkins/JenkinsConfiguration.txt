@@ -1,0 +1,62 @@
+1.Download jenkins
+2.go to war file location java -jar jenkin.war --httpPort=8001
+3.Click Create <New Item>
+4.Enter an item Name and click <Maven Project>
+5.Click OK
+6.Click Configure Option
+7.Click GENERAL do not check any checkbox
+8.Click Source Code Management
+9.Enable GIT
+	-In the Repository URL enter the Git url
+	-Branched to build will be automatically updated with "*/master"
+10.Click Build Triggers
+11.Select "Build whenever a SNAPSHOT dependen is built
+12.Select Build Periodically
+13.In the Schedule edit box Enter 0 0  * * 1-5 (Minute/Hour/Day of the Month/Month/Day of Week)
+14.Select POLL SCM
+15.Enter */5 * * * * (For Every five minutes poll)
+16.Ingnore Build Environment and Pre Steps
+17.Select Build Tab
+18.In Root POM enter pom.xml file path
+19.In the Post Steps enable "Run only if build succeeds"
+20.Click APPLY
+21.Click MANAGE JENKINS
+================================================
+=========Global Tool Configuration==============
+================================================
+22.Click Global Tool Configuration
+23.Click JDK Installations
+24.In JAVA_HOME give JDK path
+25.Click GIT
+26.Give git path in the "Path to Git executable"
+27.Click ADD Maven
+28.Add Maven path in the "Maven installations"
+================================================
+=========Manage Plugins=========================
+================================================ 
+29.Add GIT plugin
+30.Add Maven Plugin
+=============SLAVE===============
+31.Click Manage Jenkins
+32.Click Manage,Nodes and Clouds
+33.Click New NODE
+34.Enter Node Name, enable Permanent Agent and click OK
+35.Enter desired path in "Remote root directory"
+36.Enter desired path in "Custom WorkDir path"
+37.Click SAVE
+38.Click on the Create SLAVE
+39.Click LAUNCH. .jnlp file will be downloaded.
+40.Click agent.jar, Jar file will be downloaded.
+41.Run the automatically generated command
+========================================================
+========================================================
+42.Click Jenkins
+43.Click Manage Jenkins
+44.Click on the Created Job
+45.Click Configure
+46.Click GENERAL
+47.Select "Restrict where this project can be run" and select the created SLAVE
+================================================
+=========Global Security========================
+================================================ 
+48.Configure Global Security. Here in the Agents section click on Random and Save it

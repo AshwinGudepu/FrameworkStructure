@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b0fa8879-d485-4117-9994-ceb53f3a0a97" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../stringExamples/MostRepeatedCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stringExamples/RemovingDuplicateCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stringExamples/RemovingFirstDuplicateChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stringExamples/StringPermutation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SortingTechniques.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SortingTechniques.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../collections/usage/ArrayListTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../collections/usage/ArrayListTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../collections/usage/HashMapTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../collections/usage/HashMapTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restAssuredTask/restPostService/RestPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../restAssuredTask/restPostService/RestPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restAssuredTask/restPostService/UserRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../restAssuredTask/restPostService/UserRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restAssuredTask/restPostService/UserValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/../restAssuredTask/restPostService/UserValues.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1c8WYnRgoOPKieZEsjQVEEdvSCW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="C:/apks/calculator-1.0/com/epam/tat/module4" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0fa8879-d485-4117-9994-ceb53f3a0a97" name="Default Changelist" comment="" />
+      <created>1589910750329</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589910750329</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1589910789364">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="99" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589910789364" />
+  </component>
+</project>

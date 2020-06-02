@@ -1,0 +1,25 @@
+﻿CI Hometask
+
+Git repository: https://github.com/vitalliuss/helloci
+1)	Install Jenkins server on local or remote machine
+2)  Change Jenkins default port to 8081
+3) 	Create slave node on remote or local machine (you may use the same (one) machine for master and slave)
+4)	Create a job with the following steps:
+	a.	Get code from git repository:  https://github.com/vitalliuss/helloci
+		java: build and run unit tests from Java folder. Use “test” goal for maven
+		.NET: build solution (*.sln) with MSBuild
+	b.	Set build triggers: 
+		i.	after commit in VCS no logner than in 5 minutes
+		ii.	at midnight every weekday (Mon-Fri)
+	c. Job should run on slave only
+
+As the result share the link to Jenkins OR set of detailed screenshots of Jenkins and job configuration & logs with your mentor.
+
+Extra tasks (optional, but with extra mark):
+1. Make server on linux (use Cloud or virtual machine)
+2. Make node on linux
+3. Configure job history tracking and server backupx
+
+Docker is a platform for running applications in an isolated environment called a "container" (or Docker container).
+ C:\Users\Ashwin_Gudepu\.jenkins\secrets\initialAdminPassword/d0f4263f5ad54095a52ea1d50a176e73
+
