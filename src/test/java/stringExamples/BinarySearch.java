@@ -4,7 +4,7 @@ public class BinarySearch {
     public static void main(String args[]) {
 
         int[] number=new int[]{12,25,30,40,50};
-        int end=number.length-1;
+        int end=number.length;
         int start=0;
         int searchNumber=40;
 

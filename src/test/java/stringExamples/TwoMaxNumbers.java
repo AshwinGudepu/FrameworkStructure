@@ -15,7 +15,9 @@ public class TwoMaxNumbers {
             }
         }
         for(int i=0;i<2;i++){
-            System.out.println("Two MAX numbers" +numbers[i]);
+            if(i==1) {
+                System.out.println("Two MAX numbers" + numbers[i]);
+            }
         }
     }
 }
