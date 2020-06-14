@@ -91,5 +91,8 @@ public class RestAssuredRunner {
         System.out.println("-----------"+userInformation);
 
         Assert.assertEquals("Bret", userInformation[0].getUsername());
+        response.statusCode();
+        response.statusLine();
+        response.contentType();
     }
 }
