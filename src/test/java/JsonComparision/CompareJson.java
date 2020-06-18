@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -32,10 +33,12 @@ public class CompareJson {
     public void comJson(){
         String s1="{\"name\": \"John\",\"score\": 5}";
         String s2="{\"name\": \"John\",\"score\": 5}";
+       // String s2="{\"score\": 5,\"name\": \"John\"}";
         JSONObject js1=new JSONObject(s1);
         JSONObject js2=new JSONObject(s2);
         System.out.println(js1+"----------"+js2);
         System.out.println("-----------------"+js1.similar(js2));
+        Assert.assertTrue(js1.similar(js2));
         //JSONObject-Order should be same when compare two Json;
     }
 
@@ -69,8 +72,9 @@ public class CompareJson {
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         JsonPlaceHolder jph1=mapper.readValue(new FileInputStream(Paths.get("E:\\TestData\\FirstJson.json").toFile()), JsonPlaceHolder.class);
         /*mapper.disable(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES);*/
-        JsonPlaceHolder jph2=mapper.readValue(new FileInputStream(Paths.get("E:\\TestData\\SecondJson.json").toFile()), JsonPlaceHolder.class);
-        //Assert.assertEquals(jph1,jph2);
+        //JsonPlaceHolder jph2=mapper.readValue(new FileInputStream(Paths.get("E:\\TestData\\SecondJson.json").toFile()), JsonPlaceHolder.class);
+        //Values are different and comparision should fail
+        JsonPlaceHolder jph2=mapper.readValue(new FileInputStream(Paths.get("E:\\TestData\\ThirdJson.json").toFile()), JsonPlaceHolder.class);
         Assert.assertEquals(jph1.getId(),jph2.getId());
     }
 
@@ -80,6 +84,21 @@ public class CompareJson {
         JsonPath jsonPathValidator = response.jsonPath();
         System.out.println("ID : \n" + jsonPathValidator.get("address"));
         jsonPathValidator.setRootPath("");
+    }
 
+    @Test
+    public void verifyDeserializationWithClassSoftAssertion() throws IOException {
+        // UserInformation userInformation= new UserInformation();
+        ObjectMapper mapper=new ObjectMapper();
+        SoftAssert softAssert=new SoftAssert();
+        // Compare two json files
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        JsonPlaceHolder jph1=mapper.readValue(new FileInputStream(Paths.get("E:\\TestData\\FirstJson.json").toFile()), JsonPlaceHolder.class);
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        JsonPlaceHolder jph2=mapper.readValue(new FileInputStream(Paths.get("E:\\TestData\\ThirdJson.json").toFile()), JsonPlaceHolder.class);
+        softAssert.assertEquals(jph1.getUsername(),jph2.getUsername(),"Compare UserName");
+        softAssert.assertEquals(jph1.getName(),jph2.getName(),"Compare Name");
+        softAssert.assertEquals(jph1.getId(),jph2.getId(),"Compare ID");
+        softAssert.assertAll();
     }
 }

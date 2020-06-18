@@ -6,6 +6,16 @@ public class JsonPlaceHolder {
     public String name;
     public String username;
     public String website;
+    public int portNumber;
+
+    public int getPortNumber() {
+        return portNumber;
+    }
+
+    public void setPortNumber(int portNumber) {
+        this.portNumber = portNumber;
+    }
+
 
     public int getId() {
         return id;

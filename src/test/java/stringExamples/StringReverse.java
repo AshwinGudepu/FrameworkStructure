@@ -5,7 +5,7 @@ public class StringReverse {
     public static void main(String args[]){
 
         StringReverse stringReverse=new StringReverse();
-        stringReverse.primeNumbers();
+   //     stringReverse.primeNumbers();
         String word="aeioutt";
         char [] wordToChar=word.toCharArray();
 
