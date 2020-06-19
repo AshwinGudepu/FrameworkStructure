@@ -1,0 +1,46 @@
+package wait;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
+
+public class WaitExamples {
+
+    public WebDriver driver;
+    public void test001_FluentWait(){
+        Wait<WebDriver> wait=new FluentWait<>(driver)
+                .withTimeout(10, TimeUnit.SECONDS)
+                .pollingEvery(3,TimeUnit.NANOSECONDS)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(NoAlertPresentException.class);
+
+        WebElement foo=wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.id("foo"));
+            }
+        });
+    }
+
+    public void waitForPageLoaded() {
+        ExpectedCondition<Boolean> expectation = new
+                ExpectedCondition<Boolean>() {
+                    public Boolean apply(WebDriver driver) {
+                        return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+                    }
+                };
+        try {
+            Thread.sleep(1000);
+            WebDriverWait wait = new WebDriverWait(driver, 30);
+            wait.until(expectation);
+        } catch (Throwable error) {
+            Assert.fail("Timeout waiting for Page Load Request to complete.");
+        }
+    }
+}
