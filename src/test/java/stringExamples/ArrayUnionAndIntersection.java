@@ -17,5 +17,11 @@ public class ArrayUnionAndIntersection {
         Stream.of(thirdArray).forEach(array -> set.addAll(Arrays.asList(array)));
         set.forEach(System.out::println);
         Arrays.stream(firstArray).count();
+
+        Set setHash = new HashSet<>();
+        setHash.addAll(Arrays.asList(firstArray));
+        setHash.addAll(Arrays.asList(secondArray));
+        setHash.addAll(Arrays.asList(thirdArray));
+        setHash.forEach(System.out::print);
     }
 }
