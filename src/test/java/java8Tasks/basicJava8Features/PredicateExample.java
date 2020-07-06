@@ -13,13 +13,16 @@ public class PredicateExample {
     @Test
     public void predicateExample() {
         //takes input arguement
-        String word = "testing";
-        Predicate<Integer> lengthOfString = i -> (i > 10);
-        System.out.println(lengthOfString.test(word.length()));
 
-        String text = "testing";
-        Predicate<String> textIsSame = i -> (i.equals("testing"));
-        System.out.println(textIsSame.test(text));
+        //Example#1
+        Predicate<Integer> evenNumber = i -> i % 2==0;
+        System.out.println(evenNumber.test(10));
+
+        //Example#2
+        Predicate<Integer> oddNumber = i -> i % 3==0;
+        for (int i=1;i<10;i++) {
+            System.out.println(oddNumber.test(i));
+        }
     }
 
     @Test
