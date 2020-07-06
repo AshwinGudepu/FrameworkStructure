@@ -25,15 +25,33 @@ public class PalindromeTest {
         return sum;
     }
 
-    public static void main(String[] args) {
-        String strInput = "madam";
-        if (checkPalindromeString(strInput)) {
-            System.out.println(strInput + " is palindrome");
-        } else {
-            System.out.println(strInput + " not a palindrome");
+    static String StringReversed="";
+    public static String reverseStringUsingRecursion(String original,int len){
+        if (len>0){
+            StringReversed=StringReversed+original.charAt(len-1);
+            len--;
+            reverseStringUsingRecursion(original,len);
         }
+        return StringReversed;
+    }
+
+    public static void main(String[] args) {
+        String stringInput = "liril";
+        if (checkPalindromeString(stringInput)) {
+            System.out.println("Palindrome-->"+stringInput);
+        } else {
+            System.out.println("Given String is not a palindrome-->"+stringInput);
+        }
+
         int number=121;
         System.out.println("**********>>"+new PalindromeTest().checkPalindromeNumber(number));
+
+        String returnedString=reverseStringUsingRecursion(stringInput,stringInput.length());
+        if(returnedString.equals(stringInput)){
+            System.out.println("Given word is Palindrome");
+        }else{
+            System.out.println("Given Word is not Palindrome");
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 package stringExamples;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -18,6 +19,7 @@ public class RemovingDuplicateCharacters {
                 characterMap.put(ch,characterMap.get(ch)+1);
             }
         }
+        Collections.max(characterMap.values());
         characterMap.entrySet().removeIf(v->v.getValue()>1);
         characterMap.forEach((k,v)->System.out.println(k+"----------"+v));
     }
