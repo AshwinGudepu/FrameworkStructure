@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <bean id="triangle" class="springFrameworkTutorial2.Triangle">
+        <property name="points">
+                <list>
+                    <ref bean="point1"/>
+                    <ref bean="point2"/>
+                    <ref bean="point3"/>
+                </list>
+        </property>
+    </bean>
+
+    <bean id="point1" class="springFrameworkTutorial2.Point">
+        <property name="x" value="100"/>
+        <property name="y" value="200"/>
+    </bean>
+
+    <bean id="point2" class="springFrameworkTutorial2.Point">
+        <property name="x" value="30"/>
+        <property name="y" value="50"/>
+    </bean>
+
+    <bean id="point3" class="springFrameworkTutorial2.Point">
+        <property name="x" value="60"/>
+        <property name="y" value="70"/>
+    </bean>
+</beans>
