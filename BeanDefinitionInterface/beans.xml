@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="parentPoint" class="BeanDefinitionInterface.Point">
+    <property name="x" value="99"/>
+    </bean>
+
+    <bean id="beanInheritance" class="BeanDefinitionInterface.Triangle">
+        <property name="pointA" ref="point1"> </property>
+        <property name="pointB" ref="point2"> </property>
+        <property name="pointC" ref="point3"> </property>
+    </bean>
+
+    <bean id="point1" class="BeanDefinitionInterface.Point" parent="parentPoint">
+        <property name="y" value="20"/>
+    </bean>
+
+    <bean id="point2" class="BeanDefinitionInterface.Point">
+        <property name="x" value="30"/>
+        <property name="y" value="40"/>
+    </bean>
+
+    <bean id="point3" class="BeanDefinitionInterface.Point">
+        <property name="x" value="50"/>
+        <property name="y" value="60"/>
+    </bean>
+</beans>
