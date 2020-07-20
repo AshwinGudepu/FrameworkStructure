@@ -50,7 +50,7 @@ public class ConsumerRunner {
                 try {
                     // System.out.println("-===============------"+System.getProperty("user.dir"));
                     System.out.print("\n" + "==Writing to File");
-                    File file = new File(".\\src\\main\\resources\\testing.txt");
+                    File file = new File(".\\src\\main\\resources\\testing.ser");
                     if (!file.exists()) {
                         file.createNewFile();
                     } else {

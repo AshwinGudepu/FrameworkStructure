@@ -24,4 +24,14 @@ public class AbstractRunner extends AbstractClassTest{
     void absM3() {
 
     }
+
+    @Override
+    public void testMethod1() {
+
+    }
+
+    @Override
+    public void testMethod3() {
+
+    }
 }

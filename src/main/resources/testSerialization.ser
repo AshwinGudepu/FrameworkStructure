@@ -1,0 +1,1 @@
+[Product{name='Television', category='Electronics', grade='A', price=5000}, Product{name='Laptop', category='Electronics', grade='B', price=500}, Product{name='Screwdriver', category='HardWare', grade='A', price=1200}]
