@@ -41,7 +41,7 @@ public class SeleniumDropDown {
     }
 
     @Test
-    public void seleniumDropDownUsingList() throws InterruptedException {
+    public void selectUsingTextFromList() throws InterruptedException {
         List<WebElement> selectUsingOptions=driver.findElements(By.xpath("//select[@id='testingDropdown']/option"));
         for (int i=0;i<selectUsingOptions.size();i++){
             if(selectUsingOptions.get(i).getText().equals("Manual Testing")) {
@@ -53,10 +53,24 @@ public class SeleniumDropDown {
     }
 
     @Test
-    public void selectDropDownOption() throws InterruptedException {
+    public void selectByValueOption() throws InterruptedException {
         Select selectUsingOptions=new Select(driver.findElement(By.id("testingDropdown")));
         selectUsingOptions.selectByValue("Database");
         Thread.sleep(3000);
+        System.out.println("*******************");
+    }
+
+    @Test
+    public void selectByUsingGetOptions() throws InterruptedException {
+        Select selectUsingOptions = new Select(driver.findElement(By.id("testingDropdown")));
+        List<WebElement> sOptions = selectUsingOptions.getOptions();
+        Thread.sleep(3000);
+        for (int i = 0; i < sOptions.size(); i++) {
+            if (sOptions.get(i).getText().equals("Performance Testing")) {
+                sOptions.get(i).click();
+                break;
+            }
+        }
         System.out.println("*******************");
     }
 

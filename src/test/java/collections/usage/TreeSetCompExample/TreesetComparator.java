@@ -1,4 +1,4 @@
-package collections.usage;
+package collections.usage.TreeSetCompExample;
 
 import java.util.Comparator;
 
