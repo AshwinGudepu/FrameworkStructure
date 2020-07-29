@@ -15,7 +15,6 @@ public class DataPrvTelsukoExample {
 
     @DataProvider
     public Iterator<Object[]> getTestData(){
-       //TestUtil testUtil=new TestUtil();
         ArrayList<Object[]> testData=TestUtil.getDataFromExcel(path,"Data");
         return testData.iterator();
     }
