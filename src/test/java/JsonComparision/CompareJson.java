@@ -5,11 +5,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import static io.restassured.RestAssured.given;
 
@@ -24,18 +26,23 @@ public class CompareJson {
             .body();
     }
 
+/*    Three ways for Comparing JSON Files
+    1.Using JSONObject,with this Object Mapper is not reqiured
+    2.Using Response Class.First step we have to extract to response,then use ObjectMapper Class for comparision
+    3.Using JsonNode. Convert the JsonFile to String and then use ObjectMapper class for comparision*/
+
     //Comparing two JSON objects
     @Test
     public void comJson(){
         String s1="{\"name\": \"John\",\"score\": 5}";
         String s2="{\"name\": \"John\",\"score\": 5}";
        // String s2="{\"score\": 5,\"name\": \"John\"}";
-       /* JSONObject js1=new JSONObject(s1);
+        JSONObject js1=new JSONObject(s1);
         JSONObject js2=new JSONObject(s2);
         System.out.println(js1+"----------"+js2);
         System.out.println("-----------------"+js1.similar(js2));
         Assert.assertTrue(js1.similar(js2));
-       */ //JSONObject-Order should be same when compare two Json;
+        //JSONObject-Order should be same when compare two Json;
     }
 
     @Test
@@ -56,7 +63,10 @@ public class CompareJson {
         JsonNode jsonNode1=mapper.readTree(new FileInputStream(Paths.get("E:\\TestData\\FirstJson.json").toString()));
         JsonNode jsonNode2=mapper.readTree(new FileInputStream(Paths.get("E:\\TestData\\ThirdJson.json").toString()));
         System.out.println("JsonNode 1-------------"+jsonNode1.get("address"));
-        System.out.println("JsonNode 2-------------"+jsonNode2);
+        System.out.println("JsonNode 2-------------"+jsonNode2.get("address"));
+        System.out.println("Compare Two Address Fields");
+        Assert.assertEquals(jsonNode1.get("address"),jsonNode2.get("address"));
+        System.out.println("**********************************************");
         Assert.assertEquals(jsonNode1,jsonNode2);
     }
 
