@@ -22,5 +22,14 @@ public class RemovingDuplicateCharacters {
         Collections.max(characterMap.values());
         characterMap.entrySet().removeIf(v->v.getValue()>1);
         characterMap.forEach((k,v)->System.out.println(k+"----------"+v));
+
+      /*  Iterator<Map.Entry<String,String>> iter = testMap.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry<String,String> entry = iter.next();
+            if("Sample".equalsIgnoreCase(entry.getValue())){
+                iter.remove();
+            }
+        }
+        testMap.entrySet().removeIf(entry -> "Sample".equalsIgnoreCase(entry.getValue()));*/
     }
 }
